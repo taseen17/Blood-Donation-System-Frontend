@@ -1,16 +1,139 @@
-# React + Vite
+# 🩸 Blood Donation System
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A full stack web application that connects blood donors with people who need blood. The backend is a REST API built with **FastAPI**, and the frontend is a responsive interface built with **React** and **Tailwind CSS**.
 
-Currently, two official plugins are available:
+> **Live demo:** (https://blood-donation-system-phitron.netlify.app/) · 
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
 
-## React Compiler
+---
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Features
 
-## Expanding the ESLint configuration
+> Keep only what your project really does, and add anything missing.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- Donor registration and profile management
+- Search donors by blood group and location / city
+- Blood request creation and tracking
+- User authentication (login / signup)
+- Role-based access, e.g. admin / donor / recipient
+- Input validation and clear error messages
+- Responsive design for mobile and desktop
+
+## Tech Stack
+
+| Layer     | Technology                              |
+| --------- | --------------------------------------- |
+| Frontend  | React, Tailwind CSS,        |
+| Backend   | Python, FastAPI, Pydantic             |
+| Database  | PostgreSQL  |
+| Auth      | JWT                         |
+
+## Project Structure
+
+```
+blood-donation-system/
+├── backend/          # FastAPI application
+│   ├── app/
+│   └── requirements.txt
+├── frontend/         # React + Tailwind application
+│   ├── src/
+│   └── package.json
+└── README.md
+```
+
+> Adjust the folder names to match your repository.
+
+## Getting Started
+
+### Prerequisites
+
+- Python 3.10+
+- Node.js 18+ and npm
+- [Database, if it needs separate setup]
+
+### 1. Clone the repository
+
+```bash
+git clone https://github.com/taseen17/Blood-Donation-System-Frontend
+cd blood-donation-system
+```
+
+### 2. Run the backend
+
+```bash
+cd backend
+python -m venv venv
+source venv/bin/activate        # On Windows: venv\Scripts\activate
+pip install -r requirements.txt
+uvicorn app.main:app --reload   # adjust to your entry file
+```
+
+The API runs at `http://localhost:8000`. Interactive docs are available at `http://localhost:8000/docs`.
+
+### 3. Run the frontend
+
+```bash
+cd frontend
+npm install
+npm run dev                     # or npm start
+```
+
+The app runs at `http://localhost:5173` (or `http://localhost:3000`).
+
+### 4. Environment variables
+
+Create a `.env` file in the backend folder:
+
+```env
+DATABASE_URL=[your database url]
+SECRET_KEY=[your secret key]
+```
+
+And in the frontend folder, if needed:
+
+```env
+VITE_API_URL=http://localhost:8000
+```
+
+## API Overview
+
+| Method | Endpoint            | Description                    |
+| ------ | ------------------- | ------------------------------ |
+| POST   | `/register`  | Register a new user            |
+| POST   | `/login`     | Log in                         |
+| GET    | `/donor/available`         | List or search donors          |
+| POST   | `/blood_requests`       | Create a blood request         |
+| GET    | `/blood_requests/available`       | View blood requests            |
+
+> Replace these with your real routes. FastAPI's `/docs` page lists all of them.
+
+
+
+
+
+
+## What I Learned
+
+- Designing and structuring a REST API with FastAPI
+- Connecting a React frontend to a backend API
+- Building responsive layouts with Tailwind CSS
+- Complex state managements
+- FastApi based authentication and authorization
+
+## Future Improvements
+
+- Email or SMS notifications for urgent requests
+- Map-based donor search
+- Automated tests and CI
+
+## Author
+
+**Mir Muktadir Ali Taseen**
+
+- Portfolio: https://taseen17.github.io/My-Portfolio/
+- GitHub: https://github.com/taseen17
+- LinkedIn: https://www.linkedin.com/in/mir-muktadir-ali-taseen-68098a2a4/
+
+## License
+
+[MIT](LICENSE) — or choose the license you prefer.
