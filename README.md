@@ -9,7 +9,6 @@ A full stack web application that connects blood donors with people who need blo
 
 ## Features
 
-> Keep only what your project really does, and add anything missing.
 
 - Donor registration and profile management
 - Search donors by blood group and location / city
